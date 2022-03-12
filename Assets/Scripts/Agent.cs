@@ -158,10 +158,6 @@ public class Agent : MonoBehaviour
         inputs[raysCount] = (float)curIntPos.x / (float)intBounds.x;
         inputs[raysCount+1] = (float)curIntPos.y / (float)intBounds.x;
 
-        for (int i = 0; i < 4; i++)
-        {
-            inputs[raysCount + 2 + i] = memory[i];
-        }
         //Debug.Log(inputs[0] + " - " + inputs[1] + " - " + inputs[2] + " - " + inputs[3] + " - " + inputs[4] + " - " + inputs[5] + " - " + inputs[6] + " - " + inputs[7] + " - " + inputs[8] + " - " + inputs[9]);
 
         var output = brain.FeedForward(inputs);
@@ -175,13 +171,6 @@ public class Agent : MonoBehaviour
                 iM = i;
             }
         }
-
-        for (int i = 0; i < 4; i++)
-        {
-            memory[i] = output[i + 4];
-        }
-
-        
 
         if (iM >= 0)
         {

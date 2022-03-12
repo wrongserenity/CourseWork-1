@@ -365,7 +365,7 @@ MonoBehaviour:
   timeframe: 0
   populationSize: 400
   levelOrigin: {fileID: 4372947954802305300, guid: 758a911091ff4714c8ed3bc87abd3946, type: 3}
-  layers: 0e000000200000001000000009000000
+  layers: 0e000000200000001000000005000000
   MutationChance: 0.81
   MutationStrength: 0.814
   Gamespeed: 10

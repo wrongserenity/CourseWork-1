@@ -9,7 +9,7 @@ public class LogManager : MonoBehaviour
     List<float> meanValList = new List<float>() { };
     List<float> dispersionList = new List<float>() { };
 
-    string filesPostfix = "_1";
+    string filesPostfix = "_2";
     string fileName = "learning_";
 
     string bestPostfix = "_best";

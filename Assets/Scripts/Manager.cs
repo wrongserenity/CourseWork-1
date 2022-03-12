@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
     public int populationSize;//creates population size
     public GameObject levelOrigin;//holds bot prefab
 
-    public int[] layers = new int[4] { 14, 32, 16, 9 };//initializing network to the right size
+    public int[] layers = new int[4] { 14, 32, 16, 5 };//initializing network to the right size
 
     [Range(0.0001f, 1f)] public float MutationChance = 0.01f;
 

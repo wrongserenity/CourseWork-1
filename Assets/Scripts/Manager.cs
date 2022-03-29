@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    public LogManager logManager;
+    [Header("General")]
+    public bool isPlayMode = false;
 
-    public float timeframe;
+    public LogManager logManager;
+    public GameObject mainCamera;
+
     public int populationSize;//creates population size
     public GameObject levelOrigin;//holds bot prefab
 
-    public int[] layers = new int[4] { 14, 32, 16, 9 };//initializing network to the right size
+    [Range(0.1f, 50f)] public float Gamespeed = 1f;
+    public int levelsLeft = 0;
+
+    [Header("Neural Network")]
+    public int[] layers = new int[4] { 22, 32, 16, 9 };//initializing network to the right size
 
     [Range(0.0001f, 1f)] public float MutationChance = 0.01f;
 
     [Range(0f, 1f)] public float MutationStrength = 0.5f;
 
-    [Range(0.1f, 10f)] public float Gamespeed = 1f;
-
     //public List<Bot> Bots;
     public List<NeuralNetwork> networks;
     private List<Agent> agents;
     private List<Level> levels;
-    public int levelsLeft = 0;
+ 
     bool isLevelLoading = false;
 
     int generationCount = 0;
@@ -30,13 +35,19 @@ public class Manager : MonoBehaviour
 
     public float NNReactTime = 0.1f;
 
-    
+    List<NeuralNetwork> bestNN = new List<NeuralNetwork>() { };
+    int bestNNCount = 10;
+
+    public int resortGeneration = 3;
+    int reweigntGeneration = 3;
+    float reweightStrength = 0.99f;
 
 
 
     // spawn parameters
-    int toPlayerSpawnIndex = 2;
-    int activeCubesAmount = 3;
+    [Header("Gameplay")]
+    public int toPlayerSpawnIndex = 2;
+    public int activeCubesAmount = 3;
     int curSpawnIter = 0;
     float spawnDelay = 0f;
     float spawnDelayTimer = 0f;
@@ -44,12 +55,26 @@ public class Manager : MonoBehaviour
     public float cubePassTime = 3f;
 
 
-    void Start()// Start is called before the first frame update
+    void Start()
     {
-        if (populationSize % 2 != 0)
-            populationSize = 10;//if population size is not even, sets it to fifty
+        if (!isPlayMode)
+        {
+            if (populationSize % 2 != 0)
+                populationSize = 10;//if population size is not even, sets it to fifty
 
-        InitNetworks();
+            InitNetworks();
+
+            logManager.Message("Start(): Neural Mode Started", this);
+        }
+        else
+        {
+            populationSize = 1;
+            StartCoroutine(UploadLevels());
+
+            mainCamera.transform.position = new Vector3(0, 10, 0);
+            mainCamera.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 0));
+            logManager.Message("Start(): Play Mode Started", this);
+        }
 
         spawnDelay = 3f / (float)activeCubesAmount;
     }
@@ -58,16 +83,21 @@ public class Manager : MonoBehaviour
     {
         if (levelsLeft == 0)
         {
-            CreateBots();
-            for (int i = 0; i < populationSize; i++)
+            if (!isPlayMode)
             {
-                levels[i].agent.brain = networks[i];
-                levels[i].Reload();
+                CreateBots();
+                for (int i = 0; i < populationSize; i++)
+                {
+                    levels[i].agent.brain = networks[i];
+                    levels[i].Reload();
+                }
+                levelsLeft = populationSize;
             }
-            levelsLeft = populationSize;
             Debug.Log("generation: " + generationCount + "  last time:  " + (Time.time - lastGenTime) + "\n");
             lastGenTime = Time.time;
             generationCount++;
+
+            logManager.Message("FixedUpdate(): Levels Reloaded", this);
         }
 
         if (spawnDelayTimer < 0.0001f)
@@ -83,6 +113,8 @@ public class Manager : MonoBehaviour
 
     void SpawnerSystem()
     {
+        logManager.Message("Spawner System(): STARTED", this);
+
         int xOrZ = Random.Range(0, 2);
         int forwardOrBackward = Random.Range(0, 2);
         int posInt = Random.Range(0, 8);
@@ -112,10 +144,13 @@ public class Manager : MonoBehaviour
         }
         curSpawnIter++;
 
+        logManager.Message("Spawner System(): FINISHED", this);
     }
 
     public void InitNetworks()
     {
+        logManager.Message("InitNetworks(): STARTED", this);
+
         networks = new List<NeuralNetwork>();
         for (int i = 0; i < populationSize; i++)
         {
@@ -123,16 +158,24 @@ public class Manager : MonoBehaviour
             //net.Load("Assets/Save.txt");//on start load the network save
             networks.Add(net);
         }
+
+        for (int i = 0; i < bestNNCount; i++)
+        {
+            bestNN.Add(networks[populationSize - bestNNCount + i].copy(new NeuralNetwork(layers)));
+        }
+
+        logManager.Message("InitNetworks(): FINISHED", this);
     }
 
     IEnumerator UploadLevels()
     {
+        logManager.Message("UploadLevels(): STARTED", this);
+
         isLevelLoading = true;
         levels = new List<Level>();
         agents = new List<Agent>();
 
         int lines = Mathf.RoundToInt(Mathf.Pow(populationSize, 0.5f));
-        print(lines + "  asdasdsad");
         int curLine = 0;
 
         int spawned = 0;
@@ -146,86 +189,127 @@ public class Manager : MonoBehaviour
             if (spawned % lines == 0)
                 curLine++;
         }
-
-        
+        logManager.Message("UploadLevels(): levels inited", this);
 
         yield return new WaitForSeconds(1f);
 
         for (int i = 0; i < populationSize; i++)
         {
-            levels[i].agent.brain = networks[i];//deploys network to each learner
+            if (!isPlayMode)
+                levels[i].agent.brain = networks[i];//deploys network to each learner
             levels[i].Reload();
-
         }
         levelsLeft = populationSize;
         isLevelLoading = false;
+
+        logManager.Message("UploadLevels(): FINISHED", this);
+
     }
 
     public void CreateBots()
     {
-        Time.timeScale = Gamespeed;//sets gamespeed, which will increase to speed up training
+        Time.timeScale = Gamespeed;
         if (levels != null)
         {
-            SortNetworks();//this sorts networks and mutates them
+            AddNetworksFitness();
+            if (generationCount % resortGeneration == 0)
+            {
+                SortNetworks();
+                ClearNetworksFitness();
+            }
+
+            if (generationCount % reweigntGeneration == 0)
+            {
+                MutationStrength *= reweightStrength;
+            }
         }
         else
-        {
             if (!isLevelLoading)
                 StartCoroutine(UploadLevels());
-        }   
+    }
+
+    void AddNetworksFitness()
+    {
+        // запись
+        float evf = MeanValue();
+        float df = Difference();
+        logManager.WriteNewScore(Time.time - lastGenTime, evf, df);
+
+        foreach (NeuralNetwork network in networks)
+            network.AddFitnessToResort();
+    }
+
+    void ClearNetworksFitness()
+    {
+        foreach (NeuralNetwork network in networks)
+            network.ClearFitness();
+
+        foreach (NeuralNetwork netBest in bestNN)
+            netBest.ClearFitness();
     }
 
     public void SortNetworks()
     {
-        networks.Sort();
-        Debug.Log(networks[0].fitness + " - " + networks[populationSize - 1].fitness);
-        networks[populationSize - 1].Save("Assets/Save.txt");//saves networks weights and biases to file, to preserve network performance
+        logManager.Message("SortNetworks(): STARTED", this);
 
-        float evf = ExpectedValueFitness();
-        float df = DispersionFitness(evf);
-        Debug.Log("M:" + evf + "  -  D:" + df);
+        float mv = MeanValue();
+        float df = Difference();
+        Debug.Log("M:" + mv + "  -  D:" + df);
+
+        networks.Sort();
+        Debug.Log((networks[0].fitnessResortSum / (float)resortGeneration) + " - " + (networks[populationSize - 1].fitnessResortSum / (float)resortGeneration));
+
+        networks[populationSize - 1].Save("Assets/Save.txt");
+
+        logManager.Message("SortNetworks(): networks sorted and saved", this);
+        
+        networks.AddRange(bestNN);
+        networks.Sort();
+        networks.RemoveRange(0, bestNNCount);
+        for (int i = 0; i < bestNNCount; i++)
+            bestNN[i] = networks[populationSize - bestNNCount + i].copy(new NeuralNetwork(layers));
+
+        logManager.Message("SortNetworks(): best networks inserted", this);
+
+        // logging
+        logManager.WriteNewScore(Time.time - lastGenTime, mv, df);
 
         int divideCount = 5;
         int tmpDivNNCount = (7 * populationSize / 8) / divideCount;
 
-        // запись
-        logManager.WriteNewScore(Time.time - lastGenTime, evf, df);
-
-        // худшие копируют лучших и мутируют
+        // worst copy the best and mutate
         for (int i = 0; i < (tmpDivNNCount); i++)
         {
             networks[i] = networks[populationSize - 1 - i].copy(new NeuralNetwork(layers));
-            networks[i].Mutate((int)((1 / divideCount) / MutationChance), (int)(MutationStrength / divideCount));
+            networks[i].Mutate(MutationChance, MutationStrength);
         }
+        logManager.Message("SortNetworks(): worst networks managed", this);
 
-        // все средние мутируют в сторону лучших, при этом чем они хуже - тем сильнее мен€ютс€
+        // average mutate towards the best, while the worse they are, the more they change, and then they simply mutate
         for (int j = 1; j < divideCount; j++)
         {
             for (int i = 0; i < (tmpDivNNCount); i++)
             {
-                networks[divideCount * j + i].Mutate((int)(((divideCount - j - 1)/divideCount) / MutationChance), 
-                    (int)(((divideCount - j - 1) / divideCount) * MutationStrength), networks[populationSize - 1 - i]);
+                float coef = (divideCount - j) / divideCount;
+                networks[divideCount * j + i].Mutate(MutationChance * coef, MutationStrength, networks[populationSize - 1 - i]);
+                networks[divideCount * j + i].Mutate(MutationChance, MutationStrength);
             }
         }
 
-        float tempMutChance = MutationChance;
-        if (df < 1f)
-        {
-            tempMutChance = Mathf.Pow(tempMutChance, 0.0001f);
-        }
-        // лучшие мутируют
-        for (int i = 0; i < populationSize / 8; i++)
-        {
-            networks[populationSize - 1 - i].Mutate((int)((1 / divideCount) / tempMutChance), (int)(tempMutChance / divideCount));
-        }
+        logManager.Message("SortNetworks(): common networks mutated", this);
 
+        // best mutate
+        for (int i = 0; i < populationSize / 8; i++)
+            networks[populationSize - 1 - i].Mutate(1 - (1 / (float)divideCount), 1 - (1 / (float)divideCount));
+
+        logManager.Message("SortNetworks(): FINISHED", this);
     }
 
-    float ExpectedValueFitness()
+    float MeanValue()
     {
         float sum = 0f;
         foreach (NeuralNetwork n in networks)
-            sum += n.fitness;
+            sum += (n.fitnessResortSum / n.fitnessResortCount);
         return sum / populationSize;
     }
 
@@ -237,5 +321,15 @@ public class Manager : MonoBehaviour
         sum /= populationSize;
         sum -= ExpV * ExpV;
         return sum;
+    }
+
+    float Difference()
+    {
+        List<float> netsTemp = new List<float>() { };
+        foreach (NeuralNetwork net in networks)
+            netsTemp.Add(net.fitnessResortSum / net.fitnessResortCount);
+
+        netsTemp.Sort();
+        return netsTemp[netsTemp.Count - 1] - netsTemp[0];
     }
 }

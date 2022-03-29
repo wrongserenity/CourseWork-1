@@ -11,7 +11,9 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
     private float[][][] weights;//weights
     private int[] activations;//layers
 
-    public float fitness = 0;//fitness
+    public float fitness = 0f;//fitness
+    public float fitnessResortSum = 0f;
+    public int fitnessResortCount = 0;
 
     public NeuralNetwork(int[] layers)
     {
@@ -23,6 +25,19 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         InitNeurons();
         InitBiases();
         InitWeights();
+    }
+
+    public void ClearFitness()
+    {
+        fitness = 0f;
+        fitnessResortSum = 0f;
+        fitnessResortCount = 0;
+    }
+
+    public void AddFitnessToResort()
+    {
+        fitnessResortSum += fitness;
+        fitnessResortCount++;
     }
 
     private void InitNeurons()//create empty storage array for the neurons in the network.
@@ -99,57 +114,41 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         return (float)Math.Tanh(value);
     }
 
-    public void Mutate(int chance, float val)//used as a simple mutation function for any genetic implementations.
+    public void Mutate(float chance, float val)//used as a simple mutation function for any genetic implementations.
     {
         for (int i = 0; i < biases.Length; i++)
-        {
             for (int j = 0; j < biases[i].Length; j++)
-            {
-                biases[i][j] = (UnityEngine.Random.Range(0f, chance) <= 5) ? biases[i][j] += UnityEngine.Random.Range(-val, val) : biases[i][j];
-            }
-        }
+                if (UnityEngine.Random.Range(0f, 1) <= chance)
+                    biases[i][j] += UnityEngine.Random.Range(-val, val);
 
         for (int i = 0; i < weights.Length; i++)
-        {
             for (int j = 0; j < weights[i].Length; j++)
-            {
                 for (int k = 0; k < weights[i][j].Length; k++)
-                {
-                    weights[i][j][k] = (UnityEngine.Random.Range(0f, chance) <= 5) ? weights[i][j][k] += UnityEngine.Random.Range(-val, val) : weights[i][j][k];
-                }
-            }
-        }
+                    if (UnityEngine.Random.Range(0f, 1) <= chance)
+                        weights[i][j][k] += UnityEngine.Random.Range(-val, val);
     }
 
-    public void Mutate(int chance, float val, NeuralNetwork best)
+    public void Mutate(float chance, float val, NeuralNetwork best)
     {
         for (int i = 0; i < biases.Length; i++)
-        {
             for (int j = 0; j < biases[i].Length; j++)
-            {
-                biases[i][j] = (UnityEngine.Random.Range(0f, chance) <= 5) ? biases[i][j] += UnityEngine.Random.Range(0,  val) * (best.biases[i][j] - biases[i][j]) : biases[i][j];
-            }
-        }
+                if (UnityEngine.Random.Range(0f, 1) <= chance)
+                    biases[i][j] += UnityEngine.Random.Range(0, val) * (best.biases[i][j] - biases[i][j]);
 
         for (int i = 0; i < weights.Length; i++)
-        {
             for (int j = 0; j < weights[i].Length; j++)
-            {
                 for (int k = 0; k < weights[i][j].Length; k++)
-                {
-                    weights[i][j][k] = (UnityEngine.Random.Range(0f, chance) <= 5) ? weights[i][j][k] += UnityEngine.Random.Range(0, val) * (best.weights[i][j][k] - weights[i][j][k]) : weights[i][j][k];
-                }
-            }
-        }
+                    if (UnityEngine.Random.Range(0f, 1) <= chance)
+                        weights[i][j][k] += UnityEngine.Random.Range(0, val) * (best.weights[i][j][k] - weights[i][j][k]);
     }
 
     public int CompareTo(NeuralNetwork other) //Comparing For NeuralNetworks performance.
     {
         if (other == null) return 1;
 
-        if (fitness > other.fitness)
+        if (fitnessResortSum > other.fitnessResortSum)
             return 1;
-        else if (fitness < other.fitness)
+        else if (fitnessResortSum < other.fitnessResortSum)
             return -1;
         else
             return 0;
@@ -237,5 +236,49 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
             }
         }
         writer.Close();
+    }
+
+    public float CompareWith(NeuralNetwork other)
+    {
+        for (int i = 0; i < layers.Length; i++)
+            if (layers[i] != other.layers[i])
+                return 0;
+
+        float biasSum = 0f;
+        float biasOwnSquared = 0f;
+        float biasOtherSquared = 0f; 
+
+
+        float weightSum = 0f;
+        float weightOwnSquared = 0f;
+        float weightOtherSquared = 0f;
+
+        for (int i = 0; i < biases.Length; i++)
+        {
+            for (int j = 0; j < biases[i].Length; j++)
+            {
+                biasSum += biases[i][j] * other.biases[i][j];
+                biasOwnSquared += biases[i][j] * biases[i][j];
+                biasOtherSquared += other.biases[i][j] * other.biases[i][j];
+            }
+        }
+
+        for (int i = 0; i < weights.Length; i++)
+        {
+            for (int j = 0; j < weights[i].Length; j++)
+            {
+                for (int k = 0; k < weights[i][j].Length; k++)
+                {
+                    weightSum += weights[i][j][k] * other.weights[i][j][k];
+                    weightOwnSquared += weights[i][j][k] * weights[i][j][k];
+                    weightOtherSquared += other.weights[i][j][k] * other.weights[i][j][k];
+                }
+            }
+        }
+
+        float biasCosDist = biasSum / (Mathf.Sqrt(biasOwnSquared) * Mathf.Sqrt(biasOtherSquared));
+        float weightCosDist = weightSum / (Mathf.Sqrt(weightOwnSquared) * Mathf.Sqrt(weightOtherSquared));
+
+        return (biasCosDist + weightCosDist) / 2;
     }
 }

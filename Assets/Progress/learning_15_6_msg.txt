@@ -1,0 +1,1348 @@
+15.03.2022 11:25:39 | Manager (Manager) : UploadLevels(): STARTED
+
+15.03.2022 11:25:39 | Manager (Manager) : UploadLevels(): levels inited
+
+15.03.2022 11:25:39 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:39 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:39 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : UploadLevels(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:40 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:41 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:42 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:42 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:43 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): networks sorted and saved
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): best networks inserted
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): worst networks managed
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): common networks mutated
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): best networks mutated
+
+15.03.2022 11:25:44 | Manager (Manager) : SortNetworks(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:44 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:45 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:45 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:46 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:47 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:47 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:48 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:49 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): networks sorted and saved
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): best networks inserted
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): worst networks managed
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): common networks mutated
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): best networks mutated
+
+15.03.2022 11:25:50 | Manager (Manager) : SortNetworks(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:50 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:51 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:52 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:53 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | LOG MANAGER WRITED
+
+15.03.2022 11:25:54 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:54 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:55 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): networks sorted and saved
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): best networks inserted
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): worst networks managed
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): common networks mutated
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): best networks mutated
+
+15.03.2022 11:25:56 | Manager (Manager) : SortNetworks(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:56 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:57 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:58 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:25:59 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:00 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): networks sorted and saved
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): best networks inserted
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): worst networks managed
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): common networks mutated
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): best networks mutated
+
+15.03.2022 11:26:01 | Manager (Manager) : SortNetworks(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:01 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:02 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:03 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:04 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:05 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:06 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:07 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:08 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:09 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): networks sorted and saved
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): best networks inserted
+
+15.03.2022 11:26:10 | LOG MANAGER WRITED
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): worst networks managed
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): common networks mutated
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): best networks mutated
+
+15.03.2022 11:26:10 | Manager (Manager) : SortNetworks(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : FixedUpdate(): Levels Reloaded
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:10 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): FINISHED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): STARTED
+
+15.03.2022 11:26:11 | Manager (Manager) : Spawner System(): FINISHED
+

@@ -119,6 +119,17 @@ public class DamageCubeSpawner : MonoBehaviour
         dc.gameObject.SetActive(true);
     }
 
+    public void ActivateDamageCubeOnlyWhite(int i)
+    {
+        DamageCube dc = damageCubes[i];
+        dc.posOffset = transform.position;
+
+        dc.ChangeColor(true);
+        dc.SetStartPosition(new Vector3(-5f, 0f, -4.5f + (float)level.agent.curIntPos.y));
+        dc.SetVelocity(boxSpeed * Vector3.right);
+        dc.gameObject.SetActive(true);
+    }
+
     DamageCube FindReadyCube()
     {
         DamageCube dc = damageCubes[0];

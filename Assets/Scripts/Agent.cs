@@ -18,9 +18,9 @@ public class Agent : MonoBehaviour
 
     public bool isAlive = false;
 
-    public int raysCount = 8;
+    int raysCount = 16;
     RaycastHit[] shotRay;
-    float raycastLength = 4f;
+    float raycastLength = 8f;
     Vector3[] raysDir;
 
     public Material matA;
@@ -61,6 +61,9 @@ public class Agent : MonoBehaviour
             shotRay = new RaycastHit[raysCount];
             SetNeuralNetworkRays();
             gameObject.GetComponentInChildren<MeshRenderer>().material = matA;
+
+            for(int i = 0; i < memory.Length; i++)
+                memory[i] = 0f;
         }
     }
 
@@ -68,7 +71,8 @@ public class Agent : MonoBehaviour
     {
         if (isAlive)
         {
-            brain.fitness = Time.time - spawnTime - sumMovePunishment;
+            if (brain != null)
+                brain.fitness = Time.time - spawnTime - sumMovePunishment;
             sumMovePunishment = 0f;
             isAlive = false;
             level.Deactivate();
@@ -80,13 +84,9 @@ public class Agent : MonoBehaviour
     void CooldownUpdater(float deltaTime)
     {
         if (curPunishmentCooldownTime > 0)
-        {
             curPunishmentCooldownTime -= deltaTime;
-        }
         else
-        {
             punishmentStack = 1;
-        }
     }
 
     // Update is called once per frame
@@ -96,6 +96,8 @@ public class Agent : MonoBehaviour
         {
             Reload();
             reloadReq = false;
+            if (brain == null)
+                Debug.Log("no brain in: " + transform.position);
         }
         if (isAlive)
         {
@@ -107,22 +109,25 @@ public class Agent : MonoBehaviour
                     curReactTime = reactTime;
                 }
                 else
-                {
                     curReactTime -= Time.deltaTime;
-                }
-
-
-                Collider[] cols = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation);
-                foreach (Collider col in cols)
-                {
-                    if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
-                    {
-                        Kill();
-                    }
-                }
             }
             else
-                Debug.Log("no brain in: " + transform.position);
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                    MoveSignal(0);
+                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                    MoveSignal(1);
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                    MoveSignal(2);
+                else if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    MoveSignal(3);
+            }
+            Collider[] cols = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation);
+            foreach (Collider col in cols)
+            {
+                if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
+                    Kill();
+            }
         }
 
         CooldownUpdater(Time.deltaTime);
@@ -132,9 +137,7 @@ public class Agent : MonoBehaviour
     {
         float degree = 360f / (float)raysCount;
         for (int i = 0; i < raysCount; i++)
-        {
             raysDir[i] = Quaternion.AngleAxis(i * degree, Vector3.up) * Vector3.forward;
-        }
     }
 
     void UseNeuralNetwork()
@@ -159,9 +162,7 @@ public class Agent : MonoBehaviour
         inputs[raysCount+1] = (float)curIntPos.y / (float)intBounds.x;
 
         for (int i = 0; i < 4; i++)
-        {
             inputs[raysCount + 2 + i] = memory[i];
-        }
         //Debug.Log(inputs[0] + " - " + inputs[1] + " - " + inputs[2] + " - " + inputs[3] + " - " + inputs[4] + " - " + inputs[5] + " - " + inputs[6] + " - " + inputs[7] + " - " + inputs[8] + " - " + inputs[9]);
 
         var output = brain.FeedForward(inputs);
@@ -177,9 +178,7 @@ public class Agent : MonoBehaviour
         }
 
         for (int i = 0; i < 4; i++)
-        {
             memory[i] = output[i + 4];
-        }
 
         
 
@@ -239,5 +238,6 @@ public class Agent : MonoBehaviour
             }
         }
     }
+
 
 }

@@ -423,7 +423,7 @@ MonoBehaviour:
   isLogMessages: 0
   maxLogLines: 1001
   isCloseGameOnLogEnd: 0
-  filesPostfix: _3
+  filesPostfix: _4
 --- !u!4 &1761261322
 Transform:
   m_ObjectHideFlags: 0

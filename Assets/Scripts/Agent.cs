@@ -41,6 +41,8 @@ public class Agent : MonoBehaviour
 
     float[] memory = new float[4] { 0f, 0f, 0f, 0f};
 
+    float suicidePunishment = 10f;
+    float nearDamageCubePunishment = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +109,14 @@ public class Agent : MonoBehaviour
                 {
                     UseNeuralNetwork();
                     curReactTime = reactTime;
+
+                    bool isNearToDamage = false;
+                    Collider[] cols_temp = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents * 2, hitBox.transform.rotation);
+                    foreach (Collider col in cols_temp)
+                        if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
+                            isNearToDamage = true;
+                    if (isNearToDamage)
+                        sumMovePunishment += nearDamageCubePunishment;
                 }
                 else
                     curReactTime -= Time.deltaTime;
@@ -237,6 +247,14 @@ public class Agent : MonoBehaviour
                 transform.position -= Vector3.right;
             }
         }
+
+        bool isSuicideMove = false;
+        Collider[] cols = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation);
+        foreach (Collider col in cols)
+            if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
+                isSuicideMove = true;
+        if (isSuicideMove)
+            sumMovePunishment += suicidePunishment;
     }
 
 

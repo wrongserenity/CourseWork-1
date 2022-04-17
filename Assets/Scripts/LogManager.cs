@@ -38,7 +38,7 @@ public class LogManager : MonoBehaviour
         if (isLogScore)
         {
             var currentDate = System.DateTime.Now;
-            fullPath = "Assets/Progress/" + fileName + currentDate.Day.ToString() + filesPostfix;
+            fullPath = "Assets/Progress/" + fileName + currentDate.Month.ToString() + "_" + currentDate.Day.ToString() + filesPostfix;
 
             File.Create(fullPath + bestPostfix + ".txt").Close();
             File.Create(fullPath + meanPostfix + ".txt").Close();

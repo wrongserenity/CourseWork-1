@@ -364,7 +364,7 @@ MonoBehaviour:
   isPlayMode: 0
   logManager: {fileID: 1761261321}
   mainCamera: {fileID: 628889894}
-  populationSize: 400
+  populationSize: 800
   levelOrigin: {fileID: 4372947954802305300, guid: 758a911091ff4714c8ed3bc87abd3946, type: 3}
   Gamespeed: 5
   levelsLeft: 0
@@ -372,10 +372,10 @@ MonoBehaviour:
   MutationChance: 0.02
   MutationStrength: 0.7
   NNReactTime: 0.1
-  resortGeneration: 5
+  resortGeneration: 10
   toPlayerSpawnIndex: 3
-  activeCubesAmount: 3
-  cubePassTime: 3
+  activeCubesAmount: 1
+  cubePassTime: 2
 --- !u!4 &1489516524
 Transform:
   m_ObjectHideFlags: 0

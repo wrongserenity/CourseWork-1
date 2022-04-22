@@ -99,7 +99,7 @@ public class Agent : MonoBehaviour
             Reload();
             reloadReq = false;
             if (brain == null)
-                Debug.Log("no brain in: " + transform.position);
+                Debug.Log("no brain in: " + transform.position.y);
         }
         if (isAlive)
         {

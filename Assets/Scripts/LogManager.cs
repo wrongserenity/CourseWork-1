@@ -94,10 +94,9 @@ public class LogManager : MonoBehaviour
     {
         if (isLogMessages)
         {
-            string message = msgMemory + System.DateTime.Now.ToString() + " | " + (owner != null ? (owner.ToString() + " : ") : "") + text + "\n";
-            var time = System.DateTime.Now.ToString();
+            string message = msgMemory + System.DateTime.Now.ToString() + " | " + (owner != null ? (owner.ToString() + " : ") : "") + text;
             Debug.Log(message);
-            if (fullPath != null)
+            if (fullPath != "")
             {
                 StreamWriter writerMsg = new StreamWriter(fullPath + messagesPostfix + ".txt", true);
                 writerMsg.WriteLine(message);
@@ -106,7 +105,7 @@ public class LogManager : MonoBehaviour
                 msgMemory = "";
             }
             else
-                msgMemory = message;
+                msgMemory = message + "\n";
         }
     }
 }

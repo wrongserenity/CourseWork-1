@@ -27,16 +27,25 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         InitWeights();
     }
 
-    public void ClearFitness()
+    public void ClearFitness(bool isWithResortData)
     {
         fitness = 0f;
-        fitnessResortSum = 0f;
-        fitnessResortCount = 0;
+        if (isWithResortData)
+        {
+            fitnessResortSum = 0f;
+            fitnessResortCount = 0;
+        }
     }
 
     public void AddFitnessToResort()
     {
         fitnessResortSum += fitness;
+        fitnessResortCount++;
+    }
+
+    public void AddFitnessToResort(float value)
+    {
+        fitnessResortSum += value;
         fitnessResortCount++;
     }
 

@@ -239,6 +239,61 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &930637089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930637091}
+  - component: {fileID: 930637090}
+  m_Layer: 0
+  m_Name: Optimizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &930637090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930637089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5fe81935fc363428803803bdf3ee84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1489516523}
+  isEnable: 1
+  summaryNumber: 2
+  estimatedHours: 3.6000000000000005
+  generationNumber: 10
+  populationSize: 32000000fa000000
+  nnMemorySize: 04000000
+  nnRaysCount: 10000000
+  mutationChance:
+  - 0.01
+  initMutationStrength:
+  - 0.5
+--- !u!4 &930637091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930637089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.713809, y: 21.769531, z: 220.2243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271088761
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,17 +421,29 @@ MonoBehaviour:
   mainCamera: {fileID: 628889894}
   populationSize: 36
   levelOrigin: {fileID: 4372947954802305300, guid: 758a911091ff4714c8ed3bc87abd3946, type: 3}
-  Gamespeed: 1
+  gameSpeed: 30.5
   levelsLeft: 0
-  layers: 16000000200000001000000009000000
-  MutationChance: 0.02
-  MutationStrength: 0.7
-  NNReactTime: 0.1
+  fromSaveNumber: 0
+  hiddenLayers: 2000000010000000
+  nnMemorySize: 4
+  nnReactTime: 0.1
+  nnRaysCount: 16
+  nnRaycastLength: 8
+  nnPunishmentCooldown: 0.3
+  nnMovePunishment: 0.1
+  nnSuicidePunishment: 10
+  nnNearDamageCubePunishment: 0.1
+  mutationChance: 0.01
+  mutationStrength: 0.5
+  reweigntGeneration: 3
+  reweightStrength: 0.99
   resortGeneration: 2
   parallelComputing: 2
+  bestNNCount: 10
   toPlayerSpawnIndex: 3
   activeCubesAmount: 1
   cubePassTime: 2
+  optimizer: {fileID: 930637090}
 --- !u!4 &1489516524
 Transform:
   m_ObjectHideFlags: 0
@@ -422,6 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLogScore: 1
   isLogMessages: 0
+  isLogOptimizer: 1
   maxLogLines: 1001
   isCloseGameOnLogEnd: 0
   filesPostfix: _4

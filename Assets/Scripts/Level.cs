@@ -26,6 +26,6 @@ public class Level : MonoBehaviour
     public void Reload()
     {
         dcs.spawning = true;
-        agent.reloadReq = true;
+        agent.RequestReloading();
     }
 }

@@ -6,50 +6,66 @@ public class Agent : MonoBehaviour
 {
     public Level level;
 
-    Vector2Int intBounds = new Vector2Int(8, 8);
-
     public Vector2Int curIntPos = new Vector2Int(5, 5);
-    Collider hitBox;
+    public Vector3 spawnPos;
 
     public NeuralNetwork brain;
-    public float fitness = 0f;
-    float spawnTime = 0f;
-    public Vector3 spawnPos = new Vector3(0.5f, 0.5f, 0.5f);
-
     public bool isAlive = false;
 
-    int raysCount = 16;
-    RaycastHit[] shotRay;
-    float raycastLength = 8f;
-    Vector3[] raysDir;
+    [SerializeField]
+    private Material matA;
+    [SerializeField]
+    private Material matB;
 
-    public Material matA;
-    public Material matB;
+    private Vector2Int intBounds = new Vector2Int(8, 8);
+    private Collider hitBox;
 
-    public bool reloadReq = false;
+    // settings
+    private int raysCount;
+    private float raycastLength;
+    private float reactTime;
 
-    int[] moveCounter = new int[5] { 0, 0, 0, 0, 0 };
+    private float punishmentCooldown;
+    private float movePunishment;
+    private float suicidePunishment;
+    private float nearDamageCubePunishment;
 
-    float reactTime = 0f;
-    float curReactTime = 0f;
+    // data
+    private float spawnTime = 0f;
+    private float curReactTime = 0f;
 
-    float movePunishment = 0.1f;
-    float cooldownPunishment = 0.3f;
-    float curPunishmentCooldownTime = 0.0f;
-    int punishmentStack = 1;
-    float sumMovePunishment = 0f;
+    private float[] memory = new float[4] { 0f, 0f, 0f, 0f };
+    private RaycastHit[] shotRay;
+    private Vector3[] raysDir;
 
-    float[] memory = new float[4] { 0f, 0f, 0f, 0f};
+    private bool reloadReq = false;
 
-    float suicidePunishment = 10f;
-    float nearDamageCubePunishment = 0.1f;
+    private int[] moveCounter   = new int[5] { 0, 0, 0, 0, 0 };
+    private float sumPunishment = 0f;
+    private float curPunishmentCooldownTime = 0.0f;
+    private int punishmentStack = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         hitBox = gameObject.GetComponentInChildren<Collider>();
-        reactTime = level.manager.NNReactTime;
+        GetParameters();
     }
+
+    void GetParameters()
+    {
+        Manager manager = level.manager;
+        raysCount = manager.nnRaysCount;
+        raycastLength = manager.nnRaycastLength;
+        reactTime = manager.nnReactTime;
+
+        punishmentCooldown = manager.nnPunishmentCooldown;
+        movePunishment = manager.nnMovePunishment;
+        suicidePunishment = manager.nnSuicidePunishment;
+        nearDamageCubePunishment = manager.nnNearDamageCubePunishment;
+    }
+
+    public void RequestReloading() { reloadReq = true; }
 
     void Reload()
     {
@@ -59,6 +75,8 @@ public class Agent : MonoBehaviour
             transform.position = spawnPos;
             curIntPos = new Vector2Int(5, 5);
             spawnTime = Time.time;
+            sumPunishment = 0f;
+            punishmentStack = 1;
             raysDir = new Vector3[raysCount];
             shotRay = new RaycastHit[raysCount];
             SetNeuralNetworkRays();
@@ -74,8 +92,8 @@ public class Agent : MonoBehaviour
         if (isAlive)
         {
             if (brain != null)
-                brain.fitness = Time.time - spawnTime - sumMovePunishment;
-            sumMovePunishment = 0f;
+                brain.fitness = Time.time - spawnTime - sumPunishment;
+            
             isAlive = false;
             level.Deactivate();
             gameObject.GetComponentInChildren<MeshRenderer>().material = matB;
@@ -116,7 +134,7 @@ public class Agent : MonoBehaviour
                         if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
                             isNearToDamage = true;
                     if (isNearToDamage)
-                        sumMovePunishment += nearDamageCubePunishment;
+                        sumPunishment += nearDamageCubePunishment;
                 }
                 else
                     curReactTime -= Time.deltaTime;
@@ -164,7 +182,7 @@ public class Agent : MonoBehaviour
             }
             else
             {
-                Debug.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + raysDir[i] * raycastLength + Vector3.up * 0.1f, Color.red, level.manager.NNReactTime);
+                Debug.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + raysDir[i] * raycastLength + Vector3.up * 0.1f, Color.red, level.manager.nnReactTime);
                 inputs[i] = -1;
             }
         }
@@ -210,9 +228,9 @@ public class Agent : MonoBehaviour
             if (curPunishmentCooldownTime > 0)
             {
                 punishmentStack++;
-                curPunishmentCooldownTime = cooldownPunishment;
+                curPunishmentCooldownTime = punishmentCooldown;
             }
-            sumMovePunishment += movePunishment * punishmentStack;
+            sumPunishment += movePunishment * punishmentStack;
         }
         //Debug.Log("move to : " + direction);
         if (direction == 0)
@@ -254,7 +272,7 @@ public class Agent : MonoBehaviour
             if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
                 isSuicideMove = true;
         if (isSuicideMove)
-            sumMovePunishment += suicidePunishment;
+            sumPunishment += suicidePunishment;
     }
 
 

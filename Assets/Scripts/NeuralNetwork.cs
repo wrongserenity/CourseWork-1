@@ -247,7 +247,7 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         writer.Close();
     }
 
-    public float CompareWith(NeuralNetwork other)
+    public float GetCosDistanceWith(NeuralNetwork other)
     {
         for (int i = 0; i < layers.Length; i++)
             if (layers[i] != other.layers[i])

@@ -8,6 +8,8 @@ public class LogManager : MonoBehaviour
 {
     public bool isLogScore = false;
     public bool isLogMessages = false;
+    public bool isLogOptimizer = false;
+
     public int maxLogLines = 1001;
 
     public bool isCloseGameOnLogEnd = false;
@@ -19,7 +21,7 @@ public class LogManager : MonoBehaviour
     List<float> dispersionList = new List<float>() { };
 
     public string filesPostfix = "_1";
-    string fileName = "learning_";
+    string fileName = "learn_";
 
     string bestPostfix = "_best";
     string meanPostfix = "_mean";
@@ -28,6 +30,9 @@ public class LogManager : MonoBehaviour
     string messagesPostfix = "_msg";
     string msgMemory = "";
 
+    string optimizerPostfix = "_opt";
+    List<string> optimizerKeyOrder;
+
     string fullPath = "";
 
     int saveStep = 10;
@@ -35,18 +40,25 @@ public class LogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var currentDate = System.DateTime.Now;
+        fullPath = "Assets/Progress/" + fileName + currentDate.Month.ToString() + "_" + currentDate.Day.ToString() + filesPostfix;
+
         if (isLogScore)
         {
-            var currentDate = System.DateTime.Now;
-            fullPath = "Assets/Progress/" + fileName + currentDate.Month.ToString() + "_" + currentDate.Day.ToString() + filesPostfix;
-
             File.Create(fullPath + bestPostfix + ".txt").Close();
             File.Create(fullPath + meanPostfix + ".txt").Close();
             File.Create(fullPath + disPostfix + ".txt").Close();
-            File.Create(fullPath + messagesPostfix + ".txt").Close();
-
-            Debug.Log("LOG MANAGER CREATED");
         }
+
+        if (isLogMessages)
+            File.Create(fullPath + messagesPostfix + ".txt").Close();
+        
+        if (isLogOptimizer)
+            File.Create(fullPath + optimizerPostfix + ".txt").Close();
+
+
+        Debug.Log("LOG MANAGER CREATED");
+
     }
 
     public void WriteNewScore(float newBestScore, float meanValue, float newDispersion)
@@ -106,6 +118,25 @@ public class LogManager : MonoBehaviour
             }
             else
                 msgMemory = message + "\n";
+        }
+    }
+
+    public void WriteOptimizerData(Dictionary<string, float> resultDict, SummaryType type=SummaryType.UNDEFINED)
+    {
+        if (isLogOptimizer)
+        {
+            StreamWriter writerOpt = new StreamWriter(fullPath + optimizerPostfix + ".txt", true);
+            if (optimizerKeyOrder == null)
+                optimizerKeyOrder = new List<string>(resultDict.Keys);
+
+            if (type != SummaryType.UNDEFINED)
+                writerOpt.WriteLine(type.ToString());
+
+            foreach (string key in optimizerKeyOrder)
+                writerOpt.WriteLine(key + ": " + resultDict[key]);
+            writerOpt.WriteLine(" ");
+            writerOpt.Close();
+
         }
     }
 }

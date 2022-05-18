@@ -22,9 +22,9 @@ public class Manager : MonoBehaviour
     public int fromSaveNumber = 0;
 
     const int nnCurIntPosInputs = 2;
-    const int nnMoveOutputs = 5;
-    public int[] hiddenLayers = new int[2] { 32, 16 };
-    public int nnMemorySize = 4;
+    const int nnMoveOutputs     = 5;
+    public int nnMemorySize     = 4;
+    public int[] hiddenLayers   = new int[2] { 32, 16 };
 
     public float nnReactTime        = 0.1f;
     public int nnRaysCount          = 16;
@@ -75,6 +75,7 @@ public class Manager : MonoBehaviour
     private float spawnDelay        = 0f;
     private float spawnDelayTimer   = 0f;
 
+
     [Header("Optimizer")]
     public Optimizer optimizer;
 
@@ -85,7 +86,7 @@ public class Manager : MonoBehaviour
     void Start()
     {
         if (optimizer == null || !optimizer.isEnable)
-            LaunchManager(); // otherwise optimizer controls manager launching
+            LaunchManager(); // otherwise Optimizer controls manager launching
     }
 
     void LaunchManager()
@@ -131,13 +132,13 @@ public class Manager : MonoBehaviour
         levels = null;
         levelsLeft = 0;
 
-        populationSize = parameters.populationSize;
-        nnMemorySize = parameters.memorySize;
-        nnRaysCount = parameters.raysCount;
-        mutationChance = parameters.mutationChance;
-        mutationStrength = parameters.mutationChance;
+        populationSize      = parameters.populationSize;
+        nnMemorySize        = parameters.memorySize;
+        nnRaysCount         = parameters.raysCount;
+        mutationChance      = parameters.mutationChance;
+        mutationStrength    = parameters.mutationChance;
 
-        optGeneration = parameters.generationNumber;
+        optGeneration       = parameters.generationNumber;
 
         LaunchManager();
     }
@@ -195,8 +196,6 @@ public class Manager : MonoBehaviour
             if (generationCount % reweigntGeneration == 0)
                 mutationStrength *= reweightStrength;
 
-            
-
             UpdateBots();
             foreach (List<Level> levelLayer in levels)
                 for (int i = 0; i < populationSize; i++)
@@ -205,7 +204,6 @@ public class Manager : MonoBehaviour
 
             generationCount++;
         }
-
         lastGenTime = Time.time;
 
         logManager.Message("TryStartNewGeneration(): FINISHED", this);
@@ -217,21 +215,21 @@ public class Manager : MonoBehaviour
 
         foreach(List<Level> levelLayer in levels)
         {
-            int xOrZ = Random.Range(0, 2);
-            int forwardOrBackward = Random.Range(0, 2);
-            int posInt = Random.Range(0, 8);
+            int xOrZ                = Random.Range(0, 2);
+            int forwardOrBackward   = Random.Range(0, 2);
+            int posInt              = Random.Range(0, 8);
 
             for (int j = 0; j < populationSize; j++)
             {
                 if (curSpawnIter % toPlayerSpawnIndex == 0)
                 {
                     if (levelLayer[j].agent.isAlive)
-                        levelLayer[j].dcs.SpawnDamageCubeIn();
+                        levelLayer[j].damageCubeSpawner.SpawnDamageCubeIn();
 
                     curSpawnIter = 0;
                 }
                 else if (levelLayer[j].agent.isAlive)
-                    levelLayer[j].dcs.SpawnDamageCubeIn(xOrZ, forwardOrBackward, posInt);
+                    levelLayer[j].damageCubeSpawner.SpawnDamageCubeIn(xOrZ, forwardOrBackward, posInt);
             }
         }
         curSpawnIter++;
@@ -262,6 +260,7 @@ public class Manager : MonoBehaviour
     void SetNeuralNetworksToLevelsLayers()
     {
         logManager.Message("SetNeuralNetworksToLevelsLayers(): STARTED", this);
+
         NeuralNetwork net;
         List<NeuralNetwork> nets;
         networks = new List<List<NeuralNetwork>>();
@@ -293,7 +292,6 @@ public class Manager : MonoBehaviour
 
         levels = new List<List<Level>>();
         List<Level> levelsLayer;
-
         for (int i = 0; i < parallelComputing; i++)
         {
             levelsLayer = new List<Level>();
@@ -314,17 +312,14 @@ public class Manager : MonoBehaviour
             }
             levels.Add(levelsLayer);
         }
-
         logManager.Message("UploadLevels(): levels inited", this);
 
         yield return new WaitForSecondsRealtime(0.5f);
 
         SetNeuralNetworksToLevelsLayers();
-
         isLevelLoading = false;
 
         logManager.Message("UploadLevels(): FINISHED", this);
-
     }
 
     public void UpdateBots()
@@ -362,12 +357,12 @@ public class Manager : MonoBehaviour
         if (isWithResort)
         {
             evf = MeanValue();
-            df = Difference();
+            df  = Difference();
         }
         else
         {
             evf = MeanValue(false);
-            df = Difference(false);
+            df  = Difference(false);
         }
 
         logManager.WriteNewScore(Time.time - lastGenTime, evf, df);
@@ -413,11 +408,21 @@ public class Manager : MonoBehaviour
 
         logManager.Message("SortNetworks(): networks sorted and saved", this);
         
+        // insert best networks
         baseNetworks.AddRange(bestNN);
         baseNetworks.Sort();
         baseNetworks.RemoveRange(0, bestNNCount);
         for (int i = 0; i < bestNNCount; i++)
             bestNN[i] = baseNetworks[populationSize - bestNNCount + i].copy(new NeuralNetwork(layers));
+
+        // check for retraining
+        if (baseNetworks[0].GetCosDistanceWith(baseNetworks[populationSize - 1]) < 0.1)
+        {
+            float chance = Mathf.Min(1f, 10 * mutationChance);
+            float strength = Mathf.Min(1f, 10 * mutationStrength);
+            for (int i = 0; i < populationSize / 2; i++)
+                baseNetworks[i].Mutate(chance, strength);
+        }
 
         logManager.Message("SortNetworks(): best networks inserted", this);
 
@@ -465,21 +470,8 @@ public class Manager : MonoBehaviour
                     sum += n.fitness;
             sum /= networks.Count;
         }
-            
-
-
 
         return sum / populationSize;
-    }
-
-    float DispersionFitness(float ExpV)
-    {
-        float sum = 0f;
-        foreach (NeuralNetwork n in baseNetworks)
-            sum += n.fitness * n.fitness;
-        sum /= populationSize;
-        sum -= ExpV * ExpV;
-        return sum;
     }
 
     float Difference(bool isWithResort=true)

@@ -7,8 +7,8 @@ public class Optimizer : MonoBehaviour
 {
     public Manager manager;
 
-    public bool isEnable = false;
-    public int summaryNumber = 2;
+    public bool isEnable        = false;
+    public int summaryNumber    = 2;
 
     [SerializeField]
     [ContextMenuItem("EstimateHours", "EstimatedHoursFromRightClick")]
@@ -87,9 +87,7 @@ public class Optimizer : MonoBehaviour
         if (parametersList.Count > curIteration)
             StartWithParameters();
         else
-        {
             SortAndWriteResults();
-        }
     }
 
     void SortAndWriteResults()

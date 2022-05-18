@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LogManager : MonoBehaviour
 {
-    public bool isLogScore = false;
-    public bool isLogMessages = false;
-    public bool isLogOptimizer = false;
+    public bool isLogScore      = false;
+    public bool isLogMessages   = false;
+    public bool isLogOptimizer  = false;
 
     public int maxLogLines = 1001;
 
@@ -16,26 +16,26 @@ public class LogManager : MonoBehaviour
 
     int loggedLines = 0;
 
-    List<float> bestScoreList = new List<float>() { };
-    List<float> meanValList = new List<float>() { };
-    List<float> dispersionList = new List<float>() { };
+    List<float> bestScoreList   = new List<float>() { };
+    List<float> meanValList     = new List<float>() { };
+    List<float> dispersionList  = new List<float>() { };
 
-    public string filesPostfix = "_1";
-    string fileName = "learn_";
+    public string filesPostfix  = "_1";
+    string fileName             = "learn_";
 
-    string bestPostfix = "_best";
-    string meanPostfix = "_mean";
-    string disPostfix = "_diff";
+    string bestPostfix  = "_best";
+    string meanPostfix  = "_mean";
+    string disPostfix   = "_diff";
 
-    string messagesPostfix = "_msg";
-    string msgMemory = "";
+    string messagesPostfix  = "_msg";
+    string msgMemory        = "";
 
     string optimizerPostfix = "_opt";
     List<string> optimizerKeyOrder;
 
     string fullPath = "";
 
-    int saveStep = 10;
+    int saveStep    = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -56,9 +56,7 @@ public class LogManager : MonoBehaviour
         if (isLogOptimizer)
             File.Create(fullPath + optimizerPostfix + ".txt").Close();
 
-
         Debug.Log("LOG MANAGER CREATED");
-
     }
 
     public void WriteNewScore(float newBestScore, float meanValue, float newDispersion)
@@ -135,8 +133,8 @@ public class LogManager : MonoBehaviour
             foreach (string key in optimizerKeyOrder)
                 writerOpt.WriteLine(key + ": " + resultDict[key]);
             writerOpt.WriteLine(" ");
-            writerOpt.Close();
 
+            writerOpt.Close();
         }
     }
 }

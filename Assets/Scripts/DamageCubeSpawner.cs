@@ -27,15 +27,9 @@ public class DamageCubeSpawner : MonoBehaviour
     void FixedUpdate()
     {
         if (!spawning)
-        {
             for (int i = cubesAmount - 1; i >= 0; i--)
-            {
                 if (readyDamageCubes[i])
-                {
                     damageCubes[i].disA = true;
-                }
-            }
-        }
     }
 
     DamageCube CheckForCubesCount()

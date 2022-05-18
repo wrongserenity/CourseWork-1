@@ -22,9 +22,9 @@ public class DamageCube : MonoBehaviour
 
     public void SetStartPosition(Vector3 point)
     {
-        transform.position = point + posOffset;
-        wayLenght = 0f;
-        isLaunched = true;
+        transform.position  = point + posOffset;
+        wayLenght           = 0f;
+        isLaunched          = true;
     }
 
     public void SetVelocity(Vector3 velocity)
@@ -36,24 +36,17 @@ public class DamageCube : MonoBehaviour
     {
         MeshRenderer goChild = gameObject.GetComponentInChildren<MeshRenderer>();
         if (isHighlight)
-        {
             goChild.material.color = Color.white;
-        }
         else
-        {
             goChild.material.color = startColor;
-        }
     }
 
     public void Deactivate()
     {
         vel = new Vector3(0f, 0f, 0f);
         transform.position += Vector3.down;
-        //transform.position = posOffset + new Vector3(0f, -5f, 0f);
         transform.GetComponentInParent<DamageCubeSpawner>().SetReady(this);
-        //gameObject.SetActive(false);
         isLaunched = false;
-
     }
 
 
@@ -64,7 +57,6 @@ public class DamageCube : MonoBehaviour
         {
             Deactivate();
             disA = false;
-            
         }
         if (isLaunched)
         {
@@ -72,9 +64,7 @@ public class DamageCube : MonoBehaviour
             transform.position += delta_;
             wayLenght += delta_.magnitude;
             if (wayLenght - maxWayLength >= 0)
-            {
                 disA = true;
-            }
         }
     }
 }

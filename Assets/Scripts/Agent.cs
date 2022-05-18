@@ -40,10 +40,10 @@ public class Agent : MonoBehaviour
 
     private bool reloadReq = false;
 
-    private int[] moveCounter   = new int[5] { 0, 0, 0, 0, 0 };
-    private float sumPunishment = 0f;
+    private int[] moveCounter               = new int[5] { 0, 0, 0, 0, 0 };
+    private float sumPunishment             = 0f;
     private float curPunishmentCooldownTime = 0.0f;
-    private int punishmentStack = 1;
+    private int punishmentStack             = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -55,14 +55,14 @@ public class Agent : MonoBehaviour
     void GetParameters()
     {
         Manager manager = level.manager;
-        raysCount = manager.nnRaysCount;
-        raycastLength = manager.nnRaycastLength;
-        reactTime = manager.nnReactTime;
+        raysCount       = manager.nnRaysCount;
+        raycastLength   = manager.nnRaycastLength;
+        reactTime       = manager.nnReactTime;
 
-        punishmentCooldown = manager.nnPunishmentCooldown;
-        movePunishment = manager.nnMovePunishment;
-        suicidePunishment = manager.nnSuicidePunishment;
-        nearDamageCubePunishment = manager.nnNearDamageCubePunishment;
+        punishmentCooldown          = manager.nnPunishmentCooldown;
+        movePunishment              = manager.nnMovePunishment;
+        suicidePunishment           = manager.nnSuicidePunishment;
+        nearDamageCubePunishment    = manager.nnNearDamageCubePunishment;
     }
 
     public void RequestReloading() { reloadReq = true; }
@@ -71,14 +71,15 @@ public class Agent : MonoBehaviour
     {
         if (!isAlive)
         {
-            isAlive = true;
-            transform.position = spawnPos;
-            curIntPos = new Vector2Int(5, 5);
-            spawnTime = Time.time;
-            sumPunishment = 0f;
-            punishmentStack = 1;
-            raysDir = new Vector3[raysCount];
-            shotRay = new RaycastHit[raysCount];
+            isAlive             = true;
+            transform.position  = spawnPos;
+            curIntPos           = new Vector2Int(5, 5);
+            spawnTime           = Time.time;
+            sumPunishment       = 0f;
+            punishmentStack     = 1;
+            raysDir             = new Vector3[raysCount];
+            shotRay             = new RaycastHit[raysCount];
+
             SetNeuralNetworkRays();
             gameObject.GetComponentInChildren<MeshRenderer>().material = matA;
 
@@ -97,7 +98,6 @@ public class Agent : MonoBehaviour
             isAlive = false;
             level.Deactivate();
             gameObject.GetComponentInChildren<MeshRenderer>().material = matB;
-            //Debug.Log("[" + moveCounter[0] + ", " + moveCounter[1] + ", " + moveCounter[2] + ", " + moveCounter[3] + ", " + moveCounter[4] + "]");
         }
     }
 
@@ -109,7 +109,6 @@ public class Agent : MonoBehaviour
             punishmentStack = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (reloadReq)
@@ -152,10 +151,8 @@ public class Agent : MonoBehaviour
             }
             Collider[] cols = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation);
             foreach (Collider col in cols)
-            {
                 if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
                     Kill();
-            }
         }
 
         CooldownUpdater(Time.deltaTime);
@@ -191,7 +188,6 @@ public class Agent : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
             inputs[raysCount + 2 + i] = memory[i];
-        //Debug.Log(inputs[0] + " - " + inputs[1] + " - " + inputs[2] + " - " + inputs[3] + " - " + inputs[4] + " - " + inputs[5] + " - " + inputs[6] + " - " + inputs[7] + " - " + inputs[8] + " - " + inputs[9]);
 
         var output = brain.FeedForward(inputs);
 
@@ -208,16 +204,11 @@ public class Agent : MonoBehaviour
         for (int i = 0; i < 4; i++)
             memory[i] = output[i + 4];
 
-        
-
         if (iM >= 0)
         {
             moveCounter[iM]++;
-            //Debug.Log("[" + output[0] + ", " + output[1] + ", " + output[2] + ", " + output[3] + "]");
             MoveSignal(Mathf.RoundToInt(iM)-1);
         }
-
-
     }
 
     // 0 - up, 1 - down, 2 - right, 3 - left

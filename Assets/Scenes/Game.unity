@@ -269,17 +269,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1489516523}
-  isEnable: 1
-  summaryNumber: 2
-  estimatedHours: 3.6000000000000005
-  generationNumber: 10
-  populationSize: 32000000fa000000
-  nnMemorySize: 04000000
-  nnRaysCount: 10000000
+  isEnable: 0
+  summaryNumber: 10
+  estimatedHours: 36
+  generationNumber: 100
+  populationSize: 6400000032000000fa000000
+  nnMemorySize: 0400000008000000
+  nnRaysCount: 1000000020000000
   mutationChance:
   - 0.01
+  - 0.05
+  - 0.1
   initMutationStrength:
   - 0.5
+  - 0.9
 --- !u!4 &930637091
 Transform:
   m_ObjectHideFlags: 0
@@ -424,8 +427,8 @@ MonoBehaviour:
   gameSpeed: 30.5
   levelsLeft: 0
   fromSaveNumber: 0
-  hiddenLayers: 2000000010000000
   nnMemorySize: 4
+  hiddenLayers: 2000000010000000
   nnReactTime: 0.1
   nnRaysCount: 16
   nnRaycastLength: 8

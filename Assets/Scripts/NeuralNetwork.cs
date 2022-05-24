@@ -114,7 +114,7 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         return (float)Math.Tanh(value);
     }
 
-    public void Mutate(float chance, float val) // random mutation
+    public void Mutate(float chance, float val) //random mutation
     {
         for (int i = 0; i < biases.Length; i++)
             for (int j = 0; j < biases[i].Length; j++)
@@ -133,16 +133,18 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         for (int i = 0; i < biases.Length; i++)
             for (int j = 0; j < biases[i].Length; j++)
                 if (UnityEngine.Random.Range(0f, 1) <= chance)
-                    biases[i][j] += UnityEngine.Random.Range(0, val) * (target.biases[i][j] - biases[i][j]);
+                    biases[i][j] += UnityEngine.Random.Range(0, val) 
+                                        * (target.biases[i][j] - biases[i][j]);
 
         for (int i = 0; i < weights.Length; i++)
             for (int j = 0; j < weights[i].Length; j++)
                 for (int k = 0; k < weights[i][j].Length; k++)
                     if (UnityEngine.Random.Range(0f, 1) <= chance)
-                        weights[i][j][k] += UnityEngine.Random.Range(0, val) * (target.weights[i][j][k] - weights[i][j][k]);
+                        weights[i][j][k] += UnityEngine.Random.Range(0, val) 
+                                                * (target.weights[i][j][k] - weights[i][j][k]);
     }
 
-    public int CompareTo(NeuralNetwork other) //Comparing For NeuralNetworks performance.
+    public int CompareTo(NeuralNetwork other) //comparing For NeuralNetworks performance.
     {
         if (other == null) return 1;
 

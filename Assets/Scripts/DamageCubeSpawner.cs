@@ -5,25 +5,21 @@ using UnityEngine;
 public class DamageCubeSpawner : MonoBehaviour
 {
     public Level level;
-
-    List<DamageCube> damageCubes = new List<DamageCube>();
-    List<bool> readyDamageCubes = new List<bool>();
+    public float spawnDelayTimer    = 0f;
+    public bool spawning            = false;
 
     private int cubesAmount = 5;
-    public float spawnDelayTimer = 0f;
+    private float boxSpeed  = 0f;
 
-    float boxSpeed = 0f;
+    private List<DamageCube> damageCubes    = new List<DamageCube>();
+    private List<bool> readyDamageCubes     = new List<bool>();
 
-    public bool spawning = false;
-    
-    // Start is called before the first frame update
     void Start()
     {
         boxSpeed = 10f / level.manager.cubePassTime;
         CheckForCubesCount();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (!spawning)
@@ -49,11 +45,7 @@ public class DamageCubeSpawner : MonoBehaviour
         return damageCubes[damageCubes.Count - 1];
     }
 
-
-    public void SetReady(DamageCube dc)
-    {
-        readyDamageCubes[damageCubes.FindIndex(x => x == dc)] = true;
-    }
+    public void SetReady(DamageCube dc) { readyDamageCubes[damageCubes.FindIndex(x => x == dc)] = true; }
 
     public void Disable()
     {
@@ -63,65 +55,6 @@ public class DamageCubeSpawner : MonoBehaviour
             readyDamageCubes[i] = true;
         }
         spawning = false;
-    }
-
-    public void ActivateDamageCube(int i)
-    {
-        DamageCube dc = damageCubes[i];
-        dc.posOffset = transform.position;
-        
-        if (i % 5 == 0)
-        {
-            dc.ChangeColor(true);
-            dc.SetStartPosition(new Vector3(-5f, 0f, -4.5f + (float)level.agent.curIntPos.y));
-            dc.SetVelocity(boxSpeed * Vector3.right);
-        }
-        else
-        {
-            dc.ChangeColor(false);
-            int xOrZ = Random.Range(0, 2);
-            int forwardOrBackward = Random.Range(0, 2);
-            int posInt = Random.Range(0, 8);
-
-            if (xOrZ == 0)
-            {
-                if (forwardOrBackward == 0)
-                {
-                    dc.SetStartPosition(new Vector3(5f, 0f, (float)posInt - 3.5f));
-                    dc.SetVelocity(boxSpeed * Vector3.left);
-                }
-                else
-                {
-                    dc.SetStartPosition(new Vector3(-5f, 0f, (float)posInt - 3.5f));
-                    dc.SetVelocity(boxSpeed * Vector3.right);
-                }
-            }
-            else
-            {
-                if (forwardOrBackward == 0)
-                {
-                    dc.SetStartPosition(new Vector3((float)posInt - 3.5f, 0f, -5f));
-                    dc.SetVelocity(boxSpeed * Vector3.forward);
-                }
-                else
-                {
-                    dc.SetStartPosition(new Vector3((float)posInt - 3.5f, 0f, 5f));
-                    dc.SetVelocity(boxSpeed * Vector3.back);
-                }
-            }
-        }
-        dc.gameObject.SetActive(true);
-    }
-
-    public void ActivateDamageCubeOnlyWhite(int i)
-    {
-        DamageCube dc = damageCubes[i];
-        dc.posOffset = transform.position;
-
-        dc.ChangeColor(true);
-        dc.SetStartPosition(new Vector3(-5f, 0f, -4.5f + (float)level.agent.curIntPos.y));
-        dc.SetVelocity(boxSpeed * Vector3.right);
-        dc.gameObject.SetActive(true);
     }
 
     DamageCube FindReadyCube()
@@ -144,9 +77,7 @@ public class DamageCubeSpawner : MonoBehaviour
             cubesAmount++;
             return CheckForCubesCount();
         }
-            
     }
-    
 
     public void SpawnDamageCubeIn()
     {

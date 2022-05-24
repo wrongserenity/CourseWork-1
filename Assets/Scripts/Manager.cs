@@ -51,7 +51,6 @@ public class Manager : MonoBehaviour
     [Space]
     public int resortGeneration     = 3;
     public int parallelComputing    = 3;
-
     public int bestNNCount          = 10;
 
     private List<NeuralNetwork> baseNetworks;
@@ -60,7 +59,7 @@ public class Manager : MonoBehaviour
     private List<NeuralNetwork> bestNN;
 
     private bool isLevelLoading = false;
-    private bool isLaunched = false;
+    private bool isLaunched     = false;
 
     private int generationCount = 0;
     private float lastGenTime   = 0f;
@@ -81,7 +80,6 @@ public class Manager : MonoBehaviour
 
     private List<float> meanHistoryByGen = new List<float>();
     private int optGeneration = -1;
-
 
     void Start()
     {
@@ -211,8 +209,6 @@ public class Manager : MonoBehaviour
 
     void SpawnerSystem()
     {
-        //logManager.Message("Spawner System(): STARTED", this);
-
         foreach(List<Level> levelLayer in levels)
         {
             int xOrZ                = Random.Range(0, 2);
@@ -233,8 +229,6 @@ public class Manager : MonoBehaviour
             }
         }
         curSpawnIter++;
-
-        //logManager.Message("Spawner System(): FINISHED", this);
     }
 
     public void InitNetworks()
@@ -246,7 +240,7 @@ public class Manager : MonoBehaviour
         {
             NeuralNetwork net = new NeuralNetwork(layers);
             if (i < fromSaveNumber)
-                net.Load("Assets/Save.txt");//on start load the network save
+                net.Load("Assets/Save.txt");
             baseNetworks.Add(net);
         }
 
@@ -302,7 +296,10 @@ public class Manager : MonoBehaviour
             int spawned = 0;
             while (spawned < populationSize)
             {
-                Level level = (Instantiate(levelOrigin, new Vector3((float)curLine * 12f, 30f * (float)i, (float)(spawned % lines) * 12f), new Quaternion(0, 0, 1, 0))).GetComponent<Level>();//create botes
+                Level level = (Instantiate(levelOrigin, 
+                                   new Vector3((float)curLine * 12f, 30f * (float)i, (float)(spawned % lines) * 12f), 
+                                   new Quaternion(0, 0, 1, 0))
+                                ).GetComponent<Level>();
                 level.manager = this;
                 levelsLayer.Add(level);
 
@@ -402,7 +399,11 @@ public class Manager : MonoBehaviour
         Debug.Log("M:" + mv + "  -  D:" + df);
 
         baseNetworks.Sort();
-        Debug.Log((baseNetworks[0].fitnessResortSum / (float)(resortGeneration*parallelComputing)) + " - " + (baseNetworks[populationSize - 1].fitnessResortSum / (float)(resortGeneration * parallelComputing)));
+        Debug.Log((baseNetworks[0].fitnessResortSum 
+                                / (float)(resortGeneration*parallelComputing)) 
+                    + " - " 
+                    + (baseNetworks[populationSize - 1].fitnessResortSum 
+                                / (float)(resortGeneration * parallelComputing)));
 
         baseNetworks[populationSize - 1].Save("Assets/Save.txt");
 
@@ -437,13 +438,15 @@ public class Manager : MonoBehaviour
         }
         logManager.Message("SortNetworks(): worst networks managed", this);
 
-        // average mutate towards the best, while the worse they are, the more they change, and then they simply mutate
+        // average mutate towards the best, while the worse they are, the more they change,
+        // and then they simply mutate
         for (int j = 1; j < divideCount; j++)
         {
             for (int i = 0; i < (tmpDivNNCount); i++)
             {
                 float coef = (divideCount - j) / divideCount;
-                baseNetworks[divideCount * j + i].Mutate(mutationChance * coef, mutationStrength, baseNetworks[populationSize - 1 - i]);
+                baseNetworks[divideCount * j + i].Mutate(mutationChance * coef, 
+                    mutationStrength, baseNetworks[populationSize - 1 - i]);
                 baseNetworks[divideCount * j + i].Mutate(mutationChance, mutationStrength);
             }
         }

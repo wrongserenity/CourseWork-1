@@ -45,7 +45,6 @@ public class Agent : MonoBehaviour
     private float curPunishmentCooldownTime = 0.0f;
     private int punishmentStack             = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
         hitBox = gameObject.GetComponentInChildren<Collider>();
@@ -128,7 +127,9 @@ public class Agent : MonoBehaviour
                     curReactTime = reactTime;
 
                     bool isNearToDamage = false;
-                    Collider[] cols_temp = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents * 2, hitBox.transform.rotation);
+                    Collider[] cols_temp = Physics.OverlapBox(hitBox.bounds.center, 
+                                                                hitBox.bounds.extents * 2, 
+                                                                hitBox.transform.rotation);
                     foreach (Collider col in cols_temp)
                         if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
                             isNearToDamage = true;
@@ -149,12 +150,13 @@ public class Agent : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                     MoveSignal(3);
             }
-            Collider[] cols = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation);
+            Collider[] cols = Physics.OverlapBox(hitBox.bounds.center, 
+                                                    hitBox.bounds.extents, 
+                                                    hitBox.transform.rotation);
             foreach (Collider col in cols)
                 if (col.gameObject.transform.parent.gameObject.CompareTag("DamageCube"))
                     Kill();
         }
-
         CooldownUpdater(Time.deltaTime);
     }
 
@@ -173,13 +175,22 @@ public class Agent : MonoBehaviour
             Physics.Raycast(transform.position, raysDir[i], out shotRay[i], raycastLength);
             if (shotRay[i].collider != null)
             {
-                Debug.DrawLine(transform.position + Vector3.down * 0.1f, transform.position + raysDir[i] * raycastLength + Vector3.down * 0.1f, Color.black, reactTime); ;
-                Debug.DrawLine(transform.position, transform.position + raysDir[i] * shotRay[i].distance, Color.cyan, reactTime);
+                Debug.DrawLine(transform.position + Vector3.down * 0.1f, 
+                                transform.position + raysDir[i] * raycastLength + Vector3.down * 0.1f, 
+                                Color.black, 
+                                reactTime); ;
+                Debug.DrawLine(transform.position, 
+                                transform.position + raysDir[i] * shotRay[i].distance, 
+                                Color.cyan, 
+                                reactTime);
                 inputs[i] = shotRay[i].distance / raycastLength;
             }
             else
             {
-                Debug.DrawLine(transform.position + Vector3.up * 0.1f, transform.position + raysDir[i] * raycastLength + Vector3.up * 0.1f, Color.red, level.manager.nnReactTime);
+                Debug.DrawLine(transform.position + Vector3.up * 0.1f, 
+                                transform.position + raysDir[i] * raycastLength + Vector3.up * 0.1f, 
+                                Color.red,
+                                reactTime);
                 inputs[i] = -1;
             }
         }
@@ -211,7 +222,7 @@ public class Agent : MonoBehaviour
         }
     }
 
-    // 0 - up, 1 - down, 2 - right, 3 - left
+    // direction: 0 - up, 1 - down, 2 - right, 3 - left
     public void MoveSignal(int direction)
     {
         if (direction != -1)
@@ -223,7 +234,7 @@ public class Agent : MonoBehaviour
             }
             sumPunishment += movePunishment * punishmentStack;
         }
-        //Debug.Log("move to : " + direction);
+
         if (direction == 0)
         {
             if (intBounds.y - curIntPos.y - 1 >= 0)
@@ -265,6 +276,4 @@ public class Agent : MonoBehaviour
         if (isSuicideMove)
             sumPunishment += suicidePunishment;
     }
-
-
 }

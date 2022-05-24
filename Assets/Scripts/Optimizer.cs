@@ -102,10 +102,12 @@ public class Optimizer : MonoBehaviour
         for (int i = 0; i < sumNum; i++)
             manager.logManager.WriteOptimizerData(results[scoreByIter[i].iteration], SummaryType.WORST);
 
-        // divided because of worst-best alternation
+        // divided on two cycles because of worst-best alternation
         int scoreByIterCount = scoreByIter.Count;
         for (int i = 0; i < sumNum; i++)
-            manager.logManager.WriteOptimizerData(results[scoreByIter[scoreByIterCount - sumNum + i].iteration], SummaryType.BEST);
+            manager.logManager
+                .WriteOptimizerData(results[scoreByIter[scoreByIterCount - sumNum + i].iteration], 
+                                    SummaryType.BEST);
     }
 }
 

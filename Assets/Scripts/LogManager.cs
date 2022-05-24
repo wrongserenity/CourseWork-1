@@ -6,55 +6,51 @@ using UnityEngine.SceneManagement;
 
 public class LogManager : MonoBehaviour
 {
-    public bool isLogScore      = false;
-    public bool isLogMessages   = false;
-    public bool isLogOptimizer  = false;
-
-    public int maxLogLines = 1001;
-
+    public bool isLogScore          = false;
+    public bool isLogMessages       = false;
+    public bool isLogOptimizer      = false;
     public bool isCloseGameOnLogEnd = false;
 
-    int loggedLines = 0;
+    public int maxLogLines = 1001;
+    public string filesPostfix = "_1";
 
-    List<float> bestScoreList   = new List<float>() { };
-    List<float> meanValList     = new List<float>() { };
-    List<float> dispersionList  = new List<float>() { };
+    private List<float> bestScoreList   = new List<float>() { };
+    private List<float> meanValList     = new List<float>() { };
+    private List<float> dispersionList  = new List<float>() { };
 
-    public string filesPostfix  = "_1";
-    string fileName             = "learn_";
+    const string FILE_NAME             = "learn_";
 
-    string bestPostfix  = "_best";
-    string meanPostfix  = "_mean";
-    string disPostfix   = "_diff";
+    const string BEST_POSTFIX   = "_best";
+    const string MEAN_POSTFIX   = "_mean";
+    const string DIS_POSTFIX    = "_diff";
+    const string OPT_POSTFIX    = "_opt";
+    
+    const string MSG_POSTFIX    = "_msg";
+    const int SAVE_STEP         = 10;
+    
+    private string msgMemory    = "";
+    private string fullPath     = "";
+    private int loggedLines     = 0;
 
-    string messagesPostfix  = "_msg";
-    string msgMemory        = "";
+    private List<string> optimizerKeyOrder;
 
-    string optimizerPostfix = "_opt";
-    List<string> optimizerKeyOrder;
-
-    string fullPath = "";
-
-    int saveStep    = 10;
-
-    // Start is called before the first frame update
     void Start()
     {
         var currentDate = System.DateTime.Now;
-        fullPath = "Assets/Progress/" + fileName + currentDate.Month.ToString() + "_" + currentDate.Day.ToString() + filesPostfix;
+        fullPath = "Assets/Progress/" + FILE_NAME + currentDate.Month.ToString() + "_" + currentDate.Day.ToString() + filesPostfix;
 
         if (isLogScore)
         {
-            File.Create(fullPath + bestPostfix + ".txt").Close();
-            File.Create(fullPath + meanPostfix + ".txt").Close();
-            File.Create(fullPath + disPostfix + ".txt").Close();
+            File.Create(fullPath + BEST_POSTFIX + ".txt").Close();
+            File.Create(fullPath + MEAN_POSTFIX + ".txt").Close();
+            File.Create(fullPath + DIS_POSTFIX + ".txt").Close();
         }
 
         if (isLogMessages)
-            File.Create(fullPath + messagesPostfix + ".txt").Close();
+            File.Create(fullPath + MSG_POSTFIX + ".txt").Close();
         
         if (isLogOptimizer)
-            File.Create(fullPath + optimizerPostfix + ".txt").Close();
+            File.Create(fullPath + OPT_POSTFIX + ".txt").Close();
 
         Debug.Log("LOG MANAGER CREATED");
     }
@@ -70,11 +66,11 @@ public class LogManager : MonoBehaviour
             dispersionList.Add(newDispersion);
 
             float count = bestScoreList.Count;
-            if (count >= saveStep)
+            if (count >= SAVE_STEP)
             {
-                StreamWriter writerBest = new StreamWriter(fullPath + bestPostfix + ".txt", true);
-                StreamWriter writerMean = new StreamWriter(fullPath + meanPostfix + ".txt", true);
-                StreamWriter writerDis = new StreamWriter(fullPath + disPostfix + ".txt", true);
+                StreamWriter writerBest = new StreamWriter(fullPath + BEST_POSTFIX + ".txt", true);
+                StreamWriter writerMean = new StreamWriter(fullPath + MEAN_POSTFIX + ".txt", true);
+                StreamWriter writerDis = new StreamWriter(fullPath + DIS_POSTFIX + ".txt", true);
                 for (int i = 0; i < count; i++)
                 {
                     writerBest.WriteLine(System.Math.Round(bestScoreList[i], 2));
@@ -93,7 +89,7 @@ public class LogManager : MonoBehaviour
 
                 if (loggedLines == maxLogLines && isCloseGameOnLogEnd)
                 {
-                    Application.Quit();
+                    //Application.Quit();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
             }
@@ -108,7 +104,7 @@ public class LogManager : MonoBehaviour
             Debug.Log(message);
             if (fullPath != "")
             {
-                StreamWriter writerMsg = new StreamWriter(fullPath + messagesPostfix + ".txt", true);
+                StreamWriter writerMsg = new StreamWriter(fullPath + MSG_POSTFIX + ".txt", true);
                 writerMsg.WriteLine(message);
                 writerMsg.Close();
 
@@ -123,7 +119,7 @@ public class LogManager : MonoBehaviour
     {
         if (isLogOptimizer)
         {
-            StreamWriter writerOpt = new StreamWriter(fullPath + optimizerPostfix + ".txt", true);
+            StreamWriter writerOpt = new StreamWriter(fullPath + OPT_POSTFIX + ".txt", true);
             if (optimizerKeyOrder == null)
                 optimizerKeyOrder = new List<string>(resultDict.Keys);
 

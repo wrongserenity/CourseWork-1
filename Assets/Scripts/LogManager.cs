@@ -2,64 +2,135 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LogManager : MonoBehaviour
 {
-    List<float> bestScoreList = new List<float>() { };
-    List<float> meanValList = new List<float>() { };
-    List<float> dispersionList = new List<float>() { };
+    public bool isLogScore          = false;
+    public bool isLogMessages       = false;
+    public bool isLogOptimizer      = false;
+    public bool isCloseGameOnLogEnd = false;
 
-    string filesPostfix = "_1";
-    string fileName = "learning_";
+    public int maxLogLines = 1001;
+    public string filesPostfix = "_1";
 
-    string bestPostfix = "_best";
-    string meanPostfix = "_mean";
-    string disPostfix = "_disp";
+    private List<float> bestScoreList   = new List<float>() { };
+    private List<float> meanValList     = new List<float>() { };
+    private List<float> dispersionList  = new List<float>() { };
 
-    string fullPath;
+    const string FILE_NAME             = "learn_";
 
-    int saveStep = 10;
+    const string BEST_POSTFIX   = "_best";
+    const string MEAN_POSTFIX   = "_mean";
+    const string DIS_POSTFIX    = "_diff";
+    const string OPT_POSTFIX    = "_opt";
+    
+    const string MSG_POSTFIX    = "_msg";
+    const int SAVE_STEP         = 10;
+    
+    private string msgMemory    = "";
+    private string fullPath     = "";
+    private int loggedLines     = 0;
 
-    // Start is called before the first frame update
+    private List<string> optimizerKeyOrder;
+
     void Start()
     {
         var currentDate = System.DateTime.Now;
-        fullPath = "Assets/Progress/" + fileName + currentDate.Day.ToString() + filesPostfix;
+        fullPath = "Assets/Progress/" + FILE_NAME + currentDate.Month.ToString() + "_" + currentDate.Day.ToString() + filesPostfix;
 
-        File.Create(fullPath + bestPostfix + ".txt").Close();
-        File.Create(fullPath + meanPostfix + ".txt").Close();
-        File.Create(fullPath + disPostfix + ".txt").Close();
+        if (isLogScore)
+        {
+            File.Create(fullPath + BEST_POSTFIX + ".txt").Close();
+            File.Create(fullPath + MEAN_POSTFIX + ".txt").Close();
+            File.Create(fullPath + DIS_POSTFIX + ".txt").Close();
+        }
+
+        if (isLogMessages)
+            File.Create(fullPath + MSG_POSTFIX + ".txt").Close();
+        
+        if (isLogOptimizer)
+            File.Create(fullPath + OPT_POSTFIX + ".txt").Close();
 
         Debug.Log("LOG MANAGER CREATED");
     }
 
     public void WriteNewScore(float newBestScore, float meanValue, float newDispersion)
     {
-        bestScoreList.Add(newBestScore);
-        meanValList.Add(meanValue);
-        dispersionList.Add(newDispersion);
-
-        float count = bestScoreList.Count;
-        if (count >= saveStep)
+        if (isLogScore && loggedLines < maxLogLines)
         {
-            StreamWriter writerBest = new StreamWriter(fullPath + bestPostfix + ".txt", true);
-            StreamWriter writerMean = new StreamWriter(fullPath + meanPostfix + ".txt", true);
-            StreamWriter writerDis = new StreamWriter(fullPath + disPostfix + ".txt", true);
-            for (int i = 0; i < count; i++)
+            loggedLines++;
+
+            bestScoreList.Add(newBestScore);
+            meanValList.Add(meanValue);
+            dispersionList.Add(newDispersion);
+
+            float count = bestScoreList.Count;
+            if (count >= SAVE_STEP)
             {
-                writerBest.WriteLine(System.Math.Round(bestScoreList[i], 2));
-                writerMean.WriteLine(System.Math.Round(meanValList[i], 2));
-                writerDis.WriteLine(System.Math.Round(dispersionList[i], 2));
+                StreamWriter writerBest = new StreamWriter(fullPath + BEST_POSTFIX + ".txt", true);
+                StreamWriter writerMean = new StreamWriter(fullPath + MEAN_POSTFIX + ".txt", true);
+                StreamWriter writerDis = new StreamWriter(fullPath + DIS_POSTFIX + ".txt", true);
+                for (int i = 0; i < count; i++)
+                {
+                    writerBest.WriteLine(System.Math.Round(bestScoreList[i], 2));
+                    writerMean.WriteLine(System.Math.Round(meanValList[i], 2));
+                    writerDis.WriteLine(System.Math.Round(dispersionList[i], 2));
+                }
+                writerBest.Close();
+                writerMean.Close();
+                writerDis.Close();
+
+                bestScoreList.Clear();
+                meanValList.Clear();
+                dispersionList.Clear();
+
+                Message("LOG MANAGER WRITED");
+
+                if (loggedLines == maxLogLines && isCloseGameOnLogEnd)
+                {
+                    //Application.Quit();
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
             }
-            writerBest.Close();
-            writerMean.Close();
-            writerDis.Close();
+        }
+    }
 
-            bestScoreList.Clear();
-            meanValList.Clear();
-            dispersionList.Clear();
+    public void Message(string text, Object owner = null)
+    {
+        if (isLogMessages)
+        {
+            string message = msgMemory + System.DateTime.Now.ToString() + " | " + (owner != null ? (owner.ToString() + " : ") : "") + text;
+            Debug.Log(message);
+            if (fullPath != "")
+            {
+                StreamWriter writerMsg = new StreamWriter(fullPath + MSG_POSTFIX + ".txt", true);
+                writerMsg.WriteLine(message);
+                writerMsg.Close();
 
-            Debug.Log("LOG MANAGER WRITED");
+                msgMemory = "";
+            }
+            else
+                msgMemory = message + "\n";
+        }
+    }
+
+    public void WriteOptimizerData(Dictionary<string, float> resultDict, SummaryType type=SummaryType.UNDEFINED)
+    {
+        if (isLogOptimizer)
+        {
+            StreamWriter writerOpt = new StreamWriter(fullPath + OPT_POSTFIX + ".txt", true);
+            if (optimizerKeyOrder == null)
+                optimizerKeyOrder = new List<string>(resultDict.Keys);
+
+            if (type != SummaryType.UNDEFINED)
+                writerOpt.WriteLine(type.ToString());
+
+            foreach (string key in optimizerKeyOrder)
+                writerOpt.WriteLine(key + ": " + resultDict[key]);
+            writerOpt.WriteLine(" ");
+
+            writerOpt.Close();
         }
     }
 }

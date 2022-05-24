@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4372947952982231333
 Transform:
   m_ObjectHideFlags: 0
@@ -144,7 +144,6 @@ MonoBehaviour:
   fitness: 0
   spawnPos: {x: 0.5, y: 0.5, z: 0.5}
   isAlive: 0
-  raysCount: 8
   matA: {fileID: 2100000, guid: 590ba56a2ea0bff48916ef4eec75fc57, type: 2}
   matB: {fileID: 2100000, guid: 52720d11d5a9ced4098a472b0c81a10f, type: 2}
   reloadReq: 0
@@ -342,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4372947953861166783
 Transform:
   m_ObjectHideFlags: 0
@@ -437,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4372947954769846886
 Transform:
   m_ObjectHideFlags: 0
@@ -581,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4372947954855979080
 Transform:
   m_ObjectHideFlags: 0
@@ -686,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 7068476163454985771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 10, y: 0.01, z: 10}
+  m_LocalScale: {x: 8, y: 0.01, z: 8}
   m_Children: []
   m_Father: {fileID: 4372947953622916926}
   m_RootOrder: 4
